@@ -1,25 +1,26 @@
 #include <Wire.h>
 
-#define pump 13  // пин насоса // pump pin
-#define led 4    // пин вентилятора // cooler pin
+#define pump 13  // пин насоса 
+#define led 4    //  пин светодиодной ленты
 
-#include <BH1750.h>  // добавляем библиотеку датчика освещенности // adding Light intensity sensor library
-BH1750 lightMeter;   // BH1750
+#include <BH1750.h>  // библиотека датчика освещенности 
+BH1750 lightMeter;   
 
-#include <Adafruit_Sensor.h>  // добавляем библиотеку датчика температуры, влажности и давления // adding Temp Hum Bar sensor library
-#include <Adafruit_BME280.h>  // BME280
-Adafruit_BME280 bme280;       //
+#include <Adafruit_Sensor.h>  // библиотека датчика температуры, влажности и давления 
+#include <Adafruit_BME280.h>  
+Adafruit_BME280 bme280;      
 
-#define SOIL_MOISTURE 32     // A6
-#define SOIL_TEMPERATURE 33  // A7
+#define SOIL_MOISTURE 32     // пины датчика температуры и влажности почвы
+#define SOIL_TEMPERATURE 33  
+// откалиброванные значения
 const float air_value = 1587.0;
 const float water_value = 800.0;
 const float moisture_0 = 0.0;
 const float moisture_100 = 100.0;
 
-//////////////////////////////////////////НАСТРОЙКИ/CONFIGURATION/////////////////////////////////////////////////////////////////
 void setup() {
   Wire.begin();
+  // настройка ШИМ для плавного управления насосом и лентой
   ledcAttachPin(pump, 1);
   ledcAttachPin(led, 2);
   // канал, частота, разрядность
@@ -29,9 +30,11 @@ void setup() {
   Serial.begin(115200);
   delay(512);
 
-  lightMeter.begin();  // запуск датчика освещенности // turn the light intensity sensor on
+  lightMeter.begin();  // запуск датчика освещенности 
 
+  // смена канала I2C
   setBusChannel(0x07);
+  //запуск датчика MGS-THP80
   bool bme_status = bme280.begin();
   if (!bme_status) {
     Serial.println("Не найден по адресу 0х77, пробую другой...");
@@ -42,6 +45,7 @@ void setup() {
 }
 
 void loop() {
+  // считывание всех датчиков
   setBusChannel(0x07);
   float t = bme280.readTemperature();
   float h = bme280.readHumidity();
@@ -87,13 +91,14 @@ void loop() {
   }
 }
 
+// функция смены I2C-шины
 bool setBusChannel(uint8_t i2c_channel) {
   if (i2c_channel >= 0x08) {
     return false;
   } else {
     Wire.beginTransmission(0x70);
     Wire.write(i2c_channel | 0x08);  // для микросхемы PCA9547
-                                     // Wire.write(0x01 << i2c_channel);  // Для микросхемы PW548A
+    // Wire.write(0x01 << i2c_channel);  // Для микросхемы PW548A
     Wire.endTransmission();
     return true;
   }
