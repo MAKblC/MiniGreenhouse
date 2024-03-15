@@ -6,10 +6,10 @@ unsigned long bot_lasttime;
 const unsigned long BOT_MTBS = 1000; // период обновления сканирования новых сообщений
 
 // параметры сети
-#define WIFI_SSID "MGBot"
-#define WIFI_PASSWORD "Terminator812"
+#define WIFI_SSID "XXXXXX"
+#define WIFI_PASSWORD "XXXXXXXXXX"
 // токен вашего бота
-#define BOT_TOKEN "917994990:AAEzww06oDul4JbgaWpO7ooDvr-RPiM4PUc"
+#define BOT_TOKEN "917994990:XXXXXXXXXXXXXXXiM4PUc"
 UniversalTelegramBot bot(BOT_TOKEN, secured_client);
 
 // ссылка для поста фотографии
