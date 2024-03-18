@@ -11,7 +11,8 @@
 | Adafruit_BME280_Library.zip      | библиотека для MGS-THP80 |
 | Adafruit_Unified_Sensor.zip     | библиотека для MGS-THP80 |
 | BH1750-master.zip    | библиотека для MGS-L75 |
-| demo_minigreenhouse.ino  | скетч для локального сервера|
+| GyverPortal.zip    | библиотека для локального сервера |
+| minigreenhouseDemo.ino  | скетч для локального сервера|
 | iocontrol_minigreenhouse.ino  | скетч для платформы IOControl|
 | telegram_minigreenhouse.ino   | скетч для Telegram|
 | test_minigreenhouse.ino   | скетч для тестирования устройств|
