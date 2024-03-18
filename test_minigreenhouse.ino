@@ -51,7 +51,7 @@ void loop() {
   float h = bme280.readHumidity();
   float p = bme280.readPressure() / 133.3F;
   Serial.println("------------------------------------");
-  Serial.println("Температур воздуха: " + String(t, 1) + " °C");
+  Serial.println("Температура воздуха: " + String(t, 1) + " °C");
   Serial.println("Влажность воздуха:  " + String(h, 1) + " %");
   Serial.println("Атмосферное давление " + String(p, 1) + " мм рт.ст.");
   Serial.println("------------------------------------");
