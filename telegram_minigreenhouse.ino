@@ -140,7 +140,7 @@ void handleNewMessages(int numNewMessages) {
     {
       String sms = "Привет, " + from_name + "!\n\n";
       sms += "Я контроллер Йотик 32. Команды смотрите в меню слева от строки ввода\n";
-      sms = "Команды:\n";
+      sms += "Команды:\n";
       sms += "/options - пульт управления теплицей\n";
       sms += "/site - перейти на сайт\n";
       sms += "/photo - запостить фото\n";
