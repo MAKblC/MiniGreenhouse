@@ -10,8 +10,8 @@ BH1750 lightMeter;
 #include <Adafruit_BME280.h>  
 Adafruit_BME280 bme280;      
 
-#define SOIL_MOISTURE 32     // пины датчика температуры и влажности почвы
-#define SOIL_TEMPERATURE 33  
+#define SOIL_MOISTURE 34     // пины датчика температуры и влажности почвы
+#define SOIL_TEMPERATURE 35  
 // откалиброванные значения
 const float air_value = 1587.0;
 const float water_value = 800.0;
