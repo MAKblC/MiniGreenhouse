@@ -1,3 +1,5 @@
+// версия GyverPortal - 3.5.3
+
 #include <GyverPortal.h>
 GyverPortal ui;
 // Задаем статический IP-адрес:
