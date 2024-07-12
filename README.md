@@ -8,6 +8,7 @@
 
 | Название    | Описание |
 | ----------- | -----------|
+| project      | файлы для проекта по выращиванию |
 | Adafruit_BME280_Library.zip      | библиотека для MGS-THP80 |
 | Adafruit_Unified_Sensor.zip     | библиотека для MGS-THP80 |
 | BH1750-master.zip    | библиотека для MGS-L75 |
