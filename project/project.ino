@@ -352,10 +352,10 @@ void getTime() {
   strftime(timeStringBuff, sizeof(timeStringBuff), "%d.%b в %H:%M", &timeinfo);  // получение даты и времени
   String asString(timeStringBuff);
   time_buffer = asString;
-  day = timeinfo.tm_mday;
-  month = timeinfo.tm_mon + 1;
+  //day = timeinfo.tm_mday;
+  //month = timeinfo.tm_mon + 1;
   hour = timeinfo.tm_hour;
-  minute = timeinfo.tm_min;
+  //minute = timeinfo.tm_min;
 }
 
 // настройка команд меню в телеграме
